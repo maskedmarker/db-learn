@@ -26,6 +26,7 @@
 
     <mysql.version>8.0.30</mysql.version>
     <apache.poi.version>5.2.3</apache.poi.version>
+    <apache.commons.lang.version>3.12.0</apache.commons.lang.version>
   </properties>
 
   <dependencies>
@@ -58,6 +59,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+
+    <!-- 通用工具 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
     </dependency>
   </dependencies>
 
@@ -95,6 +102,13 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-test</artifactId>
         <version>${spring.boot.test.version}</version>
+      </dependency>
+
+      <!-- 通用工具 -->
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${apache.commons.lang.version}</version>
       </dependency>
 
       <!-- 项目相关 -->
