@@ -39,16 +39,30 @@ public class QueryTableMetaInfo {
         return tableColumnInfos;
     }
 
+    private TableInfo constructTableInfo(Map<String, Object> row) {
+        String tableSchemaName = (String) row.get("TABLE_SCHEMA");
+        String tableName = (String) row.get("TABLE_NAME");
+        String tableComment = (String) row.get("TABLE_COMMENT");
+        TableInfo tableInfo = new TableInfo(tableSchemaName, tableName, null);
+        tableInfo.setTableComment(tableComment);
+        return tableInfo;
+    }
+
     public TableInfo queryTableInfoBySql(Connection connection, String schemaName, String tableName) throws SQLException {
-        String querySql = String.format("select * " +
-                "from information_schema.`COLUMNS` c " +
-                "where c.TABLE_SCHEMA = '%s' " +
-                "  and c.TABLE_NAME  = '%s' " +
-                "order by c.ORDINAL_POSITION ", schemaName, tableName);
+        String queryTableSql = String.format("select t.TABLE_SCHEMA, t.TABLE_NAME, t.TABLE_COMMENT from information_schema.TABLES t where t.TABLE_SCHEMA = '%s' and t.TABLE_NAME = '%s'",
+                schemaName, tableName);
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(querySql);
-        List<Map<String, Object>> rowList = DbUtils.getResult(resultSet);
-        List<TableColumnInfo> tableColumnInfos = constructTableColumnInfo(rowList);
-        return new TableInfo(schemaName, tableName, tableColumnInfos);
+        ResultSet tableResultSet = statement.executeQuery(queryTableSql);
+        List<Map<String, Object>> tableRowList = DbUtils.getResult(tableResultSet);
+        TableInfo tableInfo = constructTableInfo(tableRowList.get(0));
+
+        String queryColumnSql = String.format("select * from information_schema.`COLUMNS` c  where c.TABLE_SCHEMA = '%s' and c.TABLE_NAME  = '%s' order by c.ORDINAL_POSITION ",
+                schemaName, tableName);
+        statement = connection.createStatement();
+        ResultSet columnResultSet = statement.executeQuery(queryColumnSql);
+        List<Map<String, Object>> columnRowList = DbUtils.getResult(columnResultSet);
+        List<TableColumnInfo> tableColumnInfos = constructTableColumnInfo(columnRowList);
+        tableInfo.setTableColumnInfoList(tableColumnInfos);
+        return tableInfo;
     }
 }

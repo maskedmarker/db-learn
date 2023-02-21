@@ -5,6 +5,7 @@ import org.example.learn.db.export.model.TableInfo;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,39 +22,20 @@ public class ExportDbSchemaToExcelTest extends BaseDbTest{
 
     @Test
     public void testExport() throws SQLException {
-        String schemaName = "emp";
-//        String schemaName = "cloud";
+        String schemaName = "lcpt_trans";
         List<String> tableNames = queryDatabaseMetaInfo.queryAllTableNames(connection, schemaName);
         System.out.println("tableNames = " + StringUtils.join(tableNames, ","));
+        tableNames = tableNames.subList(0, 30);
 
         List<TableInfo> tableInfoList = new ArrayList<>();
         for (String tableName : tableNames) {
             TableInfo tableInfo = queryTableMetaInfo.queryTableInfoBySql(connection, schemaName, tableName);
-            System.out.println("tableInfo = " + tableInfo);
             tableInfoList.add(tableInfo);
         }
+        System.out.println("tableInfoList.size() = " + tableInfoList.size());
 
-        String filename = "中邮理财恒生直销系统数据库设计说明书.xls";
-        String path = "E:\\workspace\\my-git-repo\\db-learn\\" + filename;
-        ExportDbSchemaToExcel exportDbSchemaToExcel = new ExportDbSchemaToExcel(path, tableInfoList);
-        exportDbSchemaToExcel.export();
-    }
-
-    @Test
-    public void testExport2() throws SQLException {
-        String schemaName = "emp";
-        List<String> tableNames = queryDatabaseMetaInfo.queryTableNames(connection,  schemaName, "","dept");
-        System.out.println("tableNames = " + StringUtils.join(tableNames, ","));
-
-        List<TableInfo> tableInfoList = new ArrayList<>();
-        for (String tableName : tableNames) {
-            TableInfo tableInfo = queryTableMetaInfo.queryTableInfoBySql(connection, schemaName, tableName);
-            System.out.println("tableInfo = " + tableInfo);
-            tableInfoList.add(tableInfo);
-        }
-
-        String filename = "中邮理财恒生直销系统数据库设计说明书.xls";
-        String path = "E:\\workspace\\my-git-repo\\db-learn\\" + filename;
+        String filename = "中邮理财恒生直销系统数据库设计说明书-test.xls";
+        String path = System.getProperty("user.dir") + File.separator + filename;
         ExportDbSchemaToExcel exportDbSchemaToExcel = new ExportDbSchemaToExcel(path, tableInfoList);
         exportDbSchemaToExcel.export();
     }
