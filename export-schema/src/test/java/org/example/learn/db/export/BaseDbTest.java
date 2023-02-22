@@ -4,6 +4,7 @@ import org.example.learn.db.export.config.DbConfig;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +17,8 @@ import java.sql.DriverManager;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @TestPropertySource("classpath:application-test.properties")
-public class BaseDbTest {
+@Ignore
+public abstract class BaseDbTest {
 
     @Autowired
     protected DbConfig dbConfig;
