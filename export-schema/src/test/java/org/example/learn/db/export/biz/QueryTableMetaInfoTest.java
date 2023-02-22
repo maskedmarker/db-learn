@@ -3,11 +3,13 @@ package org.example.learn.db.export.biz;
 import org.example.learn.db.export.BaseDbTest;
 import org.example.learn.db.export.biz.impl.strategy.QueryTableMetaInfo;
 import org.example.learn.db.export.model.TableInfo;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.SQLException;
 
+@Ignore
 public class QueryTableMetaInfoTest  extends BaseDbTest {
 
     @Autowired

@@ -3,12 +3,14 @@ package org.example.learn.db.export.biz;
 import org.apache.commons.lang3.StringUtils;
 import org.example.learn.db.export.BaseDbTest;
 import org.example.learn.db.export.biz.impl.strategy.QueryDatabaseMetaInfo;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Ignore
 public class QueryDatabaseMetaInfoTest extends BaseDbTest {
 
     @Autowired

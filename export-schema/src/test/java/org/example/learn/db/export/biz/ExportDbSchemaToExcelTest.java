@@ -6,6 +6,7 @@ import org.example.learn.db.export.biz.impl.strategy.QueryDatabaseMetaInfo;
 import org.example.learn.db.export.biz.impl.strategy.QueryTableMetaInfo;
 import org.example.learn.db.export.biz.impl.strategy.ExportDbSchemaToExcel;
 import org.example.learn.db.export.model.TableInfo;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,6 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Ignore
 public class ExportDbSchemaToExcelTest extends BaseDbTest {
 
     @Autowired

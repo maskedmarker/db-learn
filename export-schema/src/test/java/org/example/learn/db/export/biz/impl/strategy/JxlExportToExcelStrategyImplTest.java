@@ -25,7 +25,7 @@ public class JxlExportToExcelStrategyImplTest extends BaseDbTest {
 
     @Test
     public void testDoExport() {
-        String schema = "lcpt_trans1";
+        String schema = "lcpt_trans";
         List<TableInfo> all = queryTableInfoService.queryAll(connection, schema);
         System.out.println("all.size() = " + all.size());
 
