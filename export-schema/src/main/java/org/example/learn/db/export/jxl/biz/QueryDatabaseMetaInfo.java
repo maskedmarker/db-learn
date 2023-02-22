@@ -1,7 +1,7 @@
-package org.example.learn.db.export.biz;
+package org.example.learn.db.export.jxl.biz;
 
-import org.example.learn.db.export.constant.TableTypEnum;
-import org.example.learn.db.export.util.DbUtils;
+import org.example.learn.db.export.jxl.constant.TableTypEnum;
+import org.example.learn.db.export.jxl.util.DbUtils;
 import org.springframework.stereotype.Component;
 
 import java.sql.*;

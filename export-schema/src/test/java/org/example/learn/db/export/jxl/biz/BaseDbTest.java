@@ -1,6 +1,6 @@
-package org.example.learn.db.export.biz;
+package org.example.learn.db.export.jxl.biz;
 
-import org.example.learn.db.export.config.DbConfig;
+import org.example.learn.db.export.jxl.config.DbConfig;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

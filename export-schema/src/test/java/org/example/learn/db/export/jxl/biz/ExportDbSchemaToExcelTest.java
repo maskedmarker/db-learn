@@ -1,7 +1,7 @@
-package org.example.learn.db.export.biz;
+package org.example.learn.db.export.jxl.biz;
 
 import org.apache.commons.lang3.StringUtils;
-import org.example.learn.db.export.model.TableInfo;
+import org.example.learn.db.export.jxl.model.TableInfo;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -9,8 +9,6 @@ import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class ExportDbSchemaToExcelTest extends BaseDbTest{
 

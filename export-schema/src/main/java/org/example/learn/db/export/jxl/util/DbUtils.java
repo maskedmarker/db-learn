@@ -1,4 +1,4 @@
-package org.example.learn.db.export.util;
+package org.example.learn.db.export.jxl.util;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

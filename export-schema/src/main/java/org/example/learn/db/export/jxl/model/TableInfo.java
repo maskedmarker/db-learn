@@ -1,4 +1,4 @@
-package org.example.learn.db.export.model;
+package org.example.learn.db.export.jxl.model;
 
 import java.util.List;
 

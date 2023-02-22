@@ -1,4 +1,4 @@
-package org.example.learn.db.export.config;
+package org.example.learn.db.export.jxl.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

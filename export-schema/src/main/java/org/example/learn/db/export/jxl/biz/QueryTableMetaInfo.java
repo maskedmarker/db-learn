@@ -1,8 +1,8 @@
-package org.example.learn.db.export.biz;
+package org.example.learn.db.export.jxl.biz;
 
-import org.example.learn.db.export.model.TableColumnInfo;
-import org.example.learn.db.export.model.TableInfo;
-import org.example.learn.db.export.util.DbUtils;
+import org.example.learn.db.export.jxl.model.TableColumnInfo;
+import org.example.learn.db.export.jxl.model.TableInfo;
+import org.example.learn.db.export.jxl.util.DbUtils;
 import org.springframework.stereotype.Component;
 
 import java.sql.*;

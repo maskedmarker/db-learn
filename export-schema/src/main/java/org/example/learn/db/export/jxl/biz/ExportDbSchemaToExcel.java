@@ -1,4 +1,4 @@
-package org.example.learn.db.export.biz;
+package org.example.learn.db.export.jxl.biz;
 
 import jxl.Cell;
 import jxl.Workbook;
@@ -10,8 +10,8 @@ import jxl.format.VerticalAlignment;
 import jxl.format.*;
 import jxl.write.Label;
 import jxl.write.*;
-import org.example.learn.db.export.model.TableColumnInfo;
-import org.example.learn.db.export.model.TableInfo;
+import org.example.learn.db.export.jxl.model.TableColumnInfo;
+import org.example.learn.db.export.jxl.model.TableInfo;
 
 import java.awt.*;
 import java.io.File;

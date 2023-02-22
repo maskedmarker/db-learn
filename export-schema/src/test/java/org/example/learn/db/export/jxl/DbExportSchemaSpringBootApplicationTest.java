@@ -1,7 +1,7 @@
-package org.example.learn.db.export;
+package org.example.learn.db.export.jxl;
 
-import org.example.learn.db.export.config.DbConfig;
-import org.example.learn.db.export.util.SpringUtils;
+import org.example.learn.db.export.jxl.config.DbConfig;
+import org.example.learn.db.export.jxl.util.SpringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
